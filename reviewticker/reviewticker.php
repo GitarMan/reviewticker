@@ -1,7 +1,8 @@
 <?php
 /**
  * Plugin Name: Review Ticker
- * Version: 1.0.1
+ * Description: Creates custom post type for reviews and displays reviews on the front end either in a footer or via shortcode.
+ * Version: 0.1.0
  * Author: Ron Holt
  * Author URI: http://ronholt.info
  * Text Domain: reviewticker
