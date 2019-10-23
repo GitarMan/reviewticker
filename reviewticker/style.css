@@ -1,0 +1,86 @@
+/* Review Ticker Styles */
+
+.reviewticker {
+	width: 100%;
+	padding: 1em;
+	bottom: 0;
+	z-index: 999;
+}
+
+
+.reviewticker ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.reviewticker li {
+	margin: 0;
+	padding: 0;
+}
+
+.reviewticker__title {
+	margin-left: 1em;
+	font-style: italic;
+	white-space: nowrap;
+}
+
+.reviewticker__review {
+	display: none;
+}
+
+.reviewticker__next {
+	display: none;
+	z-index: 9999;
+	height: 0;
+	position: relative;
+	top: -1em;
+	text-align: right;
+	opacity: 0.3;
+	white-space: nowrap;
+}
+
+.reviweticker--footer .reviewticker__next {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+}
+
+.reviweticker--shortcode .reviewticker__next {
+	position: absolute;
+	right: 5px;
+}
+
+.reviewticker:hover {
+	cursor: pointer;
+}
+
+.reviewticker:hover .reviewticker__next {
+	display: block;
+}
+
+@media all and (min-width: 600px) {
+	.reviewticker-footer .reviewticker {
+		position: fixed;
+		max-height: 7em;
+	}
+}
+
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
+@keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
