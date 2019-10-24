@@ -12,7 +12,14 @@ function reviewticker_settings_init() {
 	register_setting( 'reviewticker', 'reviewticker_options' );
 
 	add_settings_section(
-		'reviewticker_section',
+		'reviewticker_shortcode_section',
+		'Shortcode Usage',
+		'reviewticker_shortcode_usage_cb',
+		'reviewticker'
+	);
+
+	add_settings_section(
+		'reviewticker_settings_section',
 		'Settings',
 		'',
 		'reviewticker'
@@ -23,7 +30,7 @@ function reviewticker_settings_init() {
 		'Fixed Footer?',
 		'reviewticker_field_fixed_cb',
 		'reviewticker',
-		'reviewticker_section',
+		'reviewticker_settings_section',
 		[
 			'label_for' => 'reviewticker_field_fixed',
 			'class' => 'reviewticker_fixed_row',
@@ -35,7 +42,7 @@ function reviewticker_settings_init() {
 		'Number of Reviews in Queue?',
 		'reviewticker_field_review_num_cb',
 		'reviewticker',
-		'reviewticker_section',
+		'reviewticker_settings_section',
 		[
 			'label_for' => 'reviewticker_field_review_num',
 			'class' => 'reviewticker_review_num_row',
@@ -47,7 +54,7 @@ function reviewticker_settings_init() {
 		'Order reviews by?',
 		'reviewticker_field_orderby_cb',
 		'reviewticker',
-		'reviewticker_section',
+		'reviewticker_settings_section',
 		[
 			'label_for' => 'reviewticker_field_orderby',
 			'class' => 'reviewticker_orderby_row',
@@ -59,7 +66,7 @@ function reviewticker_settings_init() {
 		'Ascending or Descending order?',
 		'reviewticker_field_order_cb',
 		'reviewticker',
-		'reviewticker_section',
+		'reviewticker_settings_section',
 		[
 			'label_for' => 'reviewticker_field_order',
 			'class' => 'reviewticker_order_row',
@@ -71,7 +78,7 @@ function reviewticker_settings_init() {
 		'Delay seconds for next review',
 		'reviewticker_field_delay_cb',
 		'reviewticker',
-		'reviewticker_section',
+		'reviewticker_settings_section',
 		[
 			'label_for' => 'reviewticker_field_delay',
 			'class' => 'reviewticker_delay_row',
@@ -83,7 +90,7 @@ function reviewticker_settings_init() {
 		'Choose a background color for the footer',
 		'reviewticker_field_bg_color_cb',
 		'reviewticker',
-		'reviewticker_section',
+		'reviewticker_settings_section',
 		[
 			'label_for' => 'reviewticker_field_bg_color',
 			'class' => 'reviewticker_bg_color_row',
@@ -95,7 +102,7 @@ function reviewticker_settings_init() {
 		'Choose a color for the footer text',
 		'reviewticker_field_text_color_cb',
 		'reviewticker',
-		'reviewticker_section',
+		'reviewticker_settings_section',
 		[
 			'label_for' => 'reviewticker_field_text_color',
 			'class' => 'reviewticker_text_color_row',
@@ -105,6 +112,12 @@ function reviewticker_settings_init() {
 
 add_action( 'admin_init', 'reviewticker_settings_init');
 
+function reviewticker_shortcode_usage_cb( $args ) {
+	?>
+        <p>To insert the Review Ticker into the content of any post / page, use the following shortcode:</p>
+        <pre>[reviewticker]</pre>
+	<?php
+}
 
 function reviewticker_field_fixed_cb( $args ) {
 	$options = get_option( 'reviewticker_options' ); 
