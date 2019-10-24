@@ -116,6 +116,11 @@ function reviewticker_shortcode_usage_cb( $args ) {
     ?>
         <p>To insert the Review Ticker into the content of any post / page, use the following shortcode:</p>
         <pre>[reviewticker]</pre>
+
+        <p>You can also change the background color or insert optional text/HTML before or after the reviewticker like so:</p>
+<pre>
+[reviewticker bg_color="#CCCCCC" insert_before="Optional text/HTML" insert_after="Optional text/HTML"]
+</pre>
     <?php
 }
 

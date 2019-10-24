@@ -17,6 +17,9 @@ Creates custom post type for reviews and displays reviews on the front end eithe
 To insert the Review Ticker into the content of any post / page, use the following shortcode:
 [reviewticker]
 
+You can also insert optional text/HTML before or after the reviewticker like so:
+[reviewticker bg_color="#000000" insert_before="Optional text/HTML" insert_after="Optional text/HTML"]
+
 = Settings =
 
 * Fixed Footer? - Insert fixed footer at the bottom of the website	

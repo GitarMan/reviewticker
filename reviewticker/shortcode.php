@@ -3,9 +3,8 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // Create Shortcode
-// [reviewticker bg_color="#000000"
-//               insert_before="Optional text/HTML"
-//               insert_after="Optional text/HTML"]
+// [reviewticker bg_color="#000000" insert_before="Optional text/HTML" insert_after="Optional text/HTML"]
+
 function reviewticker_shortcode( $atts ) {
     $a = shortcode_atts( array(
         'bg_color' => '',
